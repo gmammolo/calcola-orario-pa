@@ -6,10 +6,10 @@
   "scripts": {
     "start": "concurrently --kill-others \"npm run src:watch\" \"npm run server:demo\"",
     "babel": "npx babel src --out-dir build --presets react-app/prod",
-    "babel:watch": "npx babel --watch src --out-dir build --presets react-app/prod",
-    "scss": "node-sass  src --recursive --output build --output-style compressed",
+    "babel:watch": "npm run babel -- --watch",
+    "scss": "node-sass  src --recursive --output build --output-style compressed --include-path ./node_modules/@material",
     "prescss:watch": "npm run scss",
-    "scss:watch": "node-sass --watch src --recursive --output build --output-style compressed",
+    "scss:watch": "npm run scss --  --watch",
     "mincss": "css-minify --dir build --output dist scss",
     "prebuild": "npm run babel && npm run scss",
     "build": "node scripts/build.js",
@@ -17,10 +17,11 @@
     "server:demo": "http-server ./dist"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@material/button": "^10.0.0"
+  "author": "Giuseppe Mammolo gmammolo@gmail.com",
+  "license": "MIT",
+  "dependencies": {},
+  "engines": {
+    "node": "14.x"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

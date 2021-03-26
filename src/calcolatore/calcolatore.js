@@ -7,15 +7,20 @@ class Calcolatore extends React.Component {
 
   render() {
     return (
-      <div>
-        <button class='mdc-button'>
-          <span class='mdc-button__ripple'></span>
-          <span class='mdc-button__label'>Text Button</span>
-        </button>
+      <div className='container' id='calcolatorecomponent'>
+        <div className='item'>
+          <TimerInput />
+        </div>
+        {/* <div className='item'>B</div> */}
+        <div className='item'>
+          <button class='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'>
+            Calcola
+          </button>
+        </div>
       </div>
     );
   }
 }
 
 const contenitoreDom = document.querySelector('#calcolatore');
-ReactDOM.render(e(Calcolatore), contenitoreDom);
+ReactDOM.render(<Calcolatore />, contenitoreDom);

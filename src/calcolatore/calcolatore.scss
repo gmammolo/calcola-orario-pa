@@ -1,4 +1,13 @@
-.code {
-    color: red;
-    
+#calcolatorecomponent {
+    &.container {
+        display: flex;
+    }
+
+    .label {
+        display: inline;
+    }
+
+    .input {
+        display: inline;
+    }
 }
