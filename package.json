@@ -1,0 +1,35 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run src:watch\" \"npm run server:demo\"",
+    "babel": "npx babel src --out-dir build --presets react-app/prod",
+    "babel:watch": "npx babel --watch src --out-dir build --presets react-app/prod",
+    "scss": "node-sass  src --recursive --output build --output-style compressed",
+    "prescss:watch": "npm run scss",
+    "scss:watch": "node-sass --watch src --recursive --output build --output-style compressed",
+    "mincss": "css-minify --dir build --output dist scss",
+    "prebuild": "npm run babel && npm run scss",
+    "build": "node scripts/build.js",
+    "src:watch": "node scripts/local.js",
+    "server:demo": "http-server ./dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@material/button": "^10.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "chokidar": "^3.5.1",
+    "concurrently": "^6.0.0",
+    "http-server": "^0.12.3",
+    "node-sass": "^5.0.0",
+    "rimraf": "^3.0.2",
+    "terser": "^5.6.1"
+  }
+}
