@@ -1,0 +1,19 @@
+{
+    "name": "gmammolo/calcola_orario_pa",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Giuseppe Mammolo",
+            "email": "gmammolo@gmail.com",
+            "homepage": "https://github.com/gmammolo/calcola-orario-pa",
+            "role": "Developer"
+        }
+    ],
+    "license": "MIT",
+    "support": {
+        "email": "gmammolo@gmail.com"
+    },
+    "require" : {
+        "php" : ">=8.0.2"
+    }
+}
