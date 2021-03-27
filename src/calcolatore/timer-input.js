@@ -4,20 +4,15 @@ class TimerInput extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { value: '' };
-
+    this.regexStr='^[0-2]{0,1}[0-9]\:[0-5]{0,1}[0-9]$';
     this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   //   this.input.current.value
   handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert("E' stato inserito un nome: " + this.state.value);
-    event.preventDefault();
+    /** @type {string} */
+    const value =  event.target.value;
+    this.props.onChange(this.props.name, value);  
   }
 
   render() {
@@ -27,17 +22,16 @@ class TimerInput extends React.Component {
           <input
             className='mdl-textfield__input'
             type='text'
-            pattern='[0-2][0-9]:[0-5][0-9]'
-            id='start'
-            value={this.state.value}
+            pattern={this.regexStr}
+            id={'timerInput'+this.props.name}
+            value={this.props.value}
             onChange={this.handleChange}
           />
-          <label className='mdl-textfield__label' for='start'>
-            Start
+          <label className='mdl-textfield__label' htmlFor={'timerInput'+this.props.name}>
+            {this.props.label}
           </label>
           <span className='mdl-textfield__error'>formato sbagliato: 12:59</span>
         </div>
-        <button onClick={this.handleSubmit()}>test</button>
       </div>
     );
   }

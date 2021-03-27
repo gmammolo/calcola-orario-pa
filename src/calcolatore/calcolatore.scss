@@ -1,6 +1,33 @@
 #calcolatorecomponent {
     &.container {
         display: flex;
+        // flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .item {
+        flex-basis: 40%; // auto
+    }
+
+    /* Small screens */
+    @media (max-width: 650px) {
+        .item {
+            flex-basis: 80%; // auto
+        }
+    }
+
+    .startWork {}
+
+    .workingTime {}
+
+    .startLunch {}
+
+    .durationLunch {}
+
+    .result {
+        flex-basis: 100%; // auto
+        margin: 20px;
     }
 
     .label {
