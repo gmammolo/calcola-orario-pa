@@ -15,7 +15,6 @@ if (!fs.existsSync(path)) {
 
 fs.createReadStream('index.html').pipe(fs.createWriteStream('dist/index.html'));
 fs.createReadStream('index.php').pipe(fs.createWriteStream('dist/index.php'));
-fs.createReadStream('composer.json').pipe(fs.createWriteStream('dist/composer.json'));
 
 // cerca i file js dentro la cartella build (generati da babel e li minifica)
 ;(async () => {
