@@ -14,7 +14,8 @@
     "prebuild": "npm run babel && npm run scss",
     "build": "node scripts/build.js",
     "src:watch": "node scripts/local.js",
-    "server:demo": "http-server ./dist"
+    "server:demo": "http-server ./dist",
+    "server:heroku": "git subtree push --prefix dist heroku master"
   },
   "keywords": [],
   "author": "Giuseppe Mammolo gmammolo@gmail.com",

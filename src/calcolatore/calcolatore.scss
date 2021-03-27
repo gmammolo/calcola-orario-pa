@@ -7,13 +7,14 @@
     }
 
     .item {
-        flex-basis: 40%; // auto
+        flex-basis: 100%; // auto
+        margin: 5px;
     }
 
     /* Small screens */
-    @media (max-width: 650px) {
+    @media only screen and (min-width: 768px) {
         .item {
-            flex-basis: 80%; // auto
+            flex-basis: 40%; // auto
         }
     }
 
