@@ -7,7 +7,7 @@ class Calcolatore extends React.Component {
     this.state = {
       startWork: '8:00',
       workingTime: '7:12',
-      startLunch: '12:00',
+      startLunch: '12:30',
       durationLunch: '0:30',
 
       disableButton: false,
