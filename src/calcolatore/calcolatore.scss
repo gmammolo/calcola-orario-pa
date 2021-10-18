@@ -7,23 +7,17 @@
     }
 
     .item {
-        flex-basis: 40%; // auto
+        flex-basis: 100%; // auto
+        padding: 5px;
+
     }
 
-    /* Small screens */
-    @media (max-width: 650px) {
+    /* no mobile screens */
+    @media only screen and (min-device-width: 650px) {
         .item {
-            flex-basis: 80%; // auto
+            flex-basis: 45%; // auto
         }
     }
-
-    .startWork {}
-
-    .workingTime {}
-
-    .startLunch {}
-
-    .durationLunch {}
 
     .result {
         flex-basis: 100%; // auto
