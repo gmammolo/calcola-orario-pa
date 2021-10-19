@@ -3,7 +3,6 @@
 class Calcolatore extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       startWork: '8:00',
       workingTime: '7:12',
@@ -12,12 +11,19 @@ class Calcolatore extends React.Component {
 
       disableButton: false,
       result: '',
+
+      mode: props.mode,
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.canCalcola = this._canCalcola.bind(this);
     this.calcola = this.calcola.bind(this);
   }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return {...prevState, ...nextProps};
+  }
+
 
   /**
    *
@@ -107,5 +113,9 @@ class Calcolatore extends React.Component {
   }
 }
 
-const contenitoreDom = document.querySelector('#calcolatore');
-ReactDOM.render(<Calcolatore />, contenitoreDom);
+renderCalcolatore(radioMode || 'smart')
+
+function renderCalcolatore(radioMode) {
+  const contenitoreDom = document.querySelector('#calcolatore');
+  ReactDOM.render(<Calcolatore mode={radioMode} />, contenitoreDom);
+}

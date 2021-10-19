@@ -17,9 +17,35 @@
     </head>
     <body>
     <h1>Calcolatore orario lavoro PA</h1>
-    <div id="calcolatore"></div>
-
-
+    <form name="chooseMode">
+        <div class="radio-item">
+            <input type="radio" id="smart" name="radioMode" value="smart" checked>
+            <label for="smart">Smart</label>
+        </div>
+        
+        <div class="radio-item">
+            <input type="radio" id="presenza" name="radioMode" value="presenza">
+            <label for="presenza">Presenza</label>
+        </div>
+    </form>
+    <div id="calcolatore" ></div>
+    <script>
+        const radio = document.chooseMode.radioMode;
+        var prev = null;
+        var radioMode;
+        for (var i = 0; i < radio.length; i++) {
+            radio[i].addEventListener('change', function() {
+                if (this !== prev) {
+                    prev = this;
+                    radioMode = prev.value;
+                    renderCalcolatore(radioMode);
+                } 
+            });
+        }
+    </script>
+    <div id="footer">
+        Version: 1.2
+    </div>
 
     <!-- Carica il nostro componente React. -->
     <script src="timer.min.js"></script>
